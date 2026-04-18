@@ -35,6 +35,10 @@ export function Navbar() {
           scrolled ? "h-14" : "h-20 sm:h-28"
         }`}
       >
+        <div className="flex items-center md:hidden">
+          <ThemeToggle />
+        </div>
+
         <a
           href="#top"
           className={`flex items-center gap-3 font-display font-bold transition-all duration-300 ${
@@ -72,7 +76,9 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
           <Button
             asChild
             size="sm"
