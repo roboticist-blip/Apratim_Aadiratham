@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export function GradientMesh() {
+  const [isClient, setIsClient] = React.useState(false);
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const animationRef = React.useRef<number | undefined>(undefined);
   const mouseRef = React.useRef({ x: 0, y: 0 });
@@ -13,6 +14,12 @@ export function GradientMesh() {
   });
 
   React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (!isClient) return;
+    
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -148,7 +155,7 @@ export function GradientMesh() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <canvas
