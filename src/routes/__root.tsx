@@ -33,6 +33,15 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Aadiraatham" },
+      { property: "og:title", content: "Aadiraatham" },
+      { name: "twitter:title", content: "Aadiraatham" },
+      { name: "description", content: "Event Hub Landing is a responsive event website showcasing event details, registration, and contact information." },
+      { property: "og:description", content: "Event Hub Landing is a responsive event website showcasing event details, registration, and contact information." },
+      { name: "twitter:description", content: "Event Hub Landing is a responsive event website showcasing event details, registration, and contact information." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41c7b95c-d310-4f55-b08a-ddd4ddbab084/id-preview-af096b97--0c0fc86f-4f7e-4d9d-a729-be3e2a0d3509.lovable.app-1776511525828.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41c7b95c-d310-4f55-b08a-ddd4ddbab084/id-preview-af096b97--0c0fc86f-4f7e-4d9d-a729-be3e2a0d3509.lovable.app-1776511525828.png" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {
