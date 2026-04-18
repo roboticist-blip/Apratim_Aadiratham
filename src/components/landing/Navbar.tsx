@@ -2,7 +2,7 @@ import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { APPLY_URL, EVENT } from "@/lib/event-config";
+import { APPLY_URL } from "@/lib/event-config";
 import logo from "@/assets/logo.jpg";
 
 const links = [
@@ -13,18 +13,36 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="w-full border-b border-border/60 bg-background">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2 font-display font-bold">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
+          scrolled ? "h-16" : "h-24"
+        }`}
+      >
+        <a href="#top" className="flex items-center gap-3 font-display font-bold">
           <img
             src={logo}
-            alt={`${EVENT.organiser} logo`}
-            className="size-10 rounded-lg object-cover ring-1 ring-border"
+            alt="Robotics and Drone Club logo"
+            className={`rounded-lg object-cover ring-1 ring-border transition-all duration-300 ease-out ${
+              scrolled ? "size-10" : "size-16"
+            }`}
           />
-          <span className="hidden text-lg tracking-tight sm:inline">
-            {EVENT.name}
+          <span
+            className={`hidden tracking-tight transition-all duration-300 ease-out sm:inline ${
+              scrolled ? "text-lg" : "text-2xl"
+            }`}
+          >
+            Robotics and Drone Club
           </span>
         </a>
 
