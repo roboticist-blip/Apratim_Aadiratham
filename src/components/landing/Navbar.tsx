@@ -31,21 +31,28 @@ export function Navbar() {
       }`}
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
-          scrolled ? "h-14" : "h-20"
+        className={`relative mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
+          scrolled ? "h-14" : "h-20 sm:h-28"
         }`}
       >
-        <a href="#top" className="flex items-center gap-3 font-display font-bold">
+        <a
+          href="#top"
+          className={`flex items-center gap-3 font-display font-bold transition-all duration-300 ${
+            scrolled
+              ? ""
+              : "absolute left-1/2 -translate-x-1/2 sm:static sm:left-auto sm:translate-x-0"
+          }`}
+        >
           <img
             src={logo}
             alt="Robotics and Drone Club logo"
             className={`rounded-lg object-cover ring-1 ring-border transition-all duration-300 ease-out ${
-              scrolled ? "size-9" : "size-12"
+              scrolled ? "size-9" : "size-14 sm:size-20"
             }`}
           />
           <span
             className={`hidden tracking-tight transition-all duration-300 ease-out sm:inline ${
-              scrolled ? "text-base" : "text-xl"
+              scrolled ? "text-base" : "text-2xl"
             }`}
           >
             Robotics and Drone Club
