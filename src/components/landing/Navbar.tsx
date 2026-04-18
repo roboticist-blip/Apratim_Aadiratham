@@ -23,10 +23,16 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="w-full border-b border-border/60 bg-background">
+    <header
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ease-out ${
+        scrolled
+          ? "border-border/60 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70"
+          : "border-transparent bg-background"
+      }`}
+    >
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
-          scrolled ? "h-16" : "h-24"
+          scrolled ? "h-14" : "h-20"
         }`}
       >
         <a href="#top" className="flex items-center gap-3 font-display font-bold">
@@ -34,12 +40,12 @@ export function Navbar() {
             src={logo}
             alt="Robotics and Drone Club logo"
             className={`rounded-lg object-cover ring-1 ring-border transition-all duration-300 ease-out ${
-              scrolled ? "size-10" : "size-16"
+              scrolled ? "size-9" : "size-12"
             }`}
           />
           <span
             className={`hidden tracking-tight transition-all duration-300 ease-out sm:inline ${
-              scrolled ? "text-lg" : "text-2xl"
+              scrolled ? "text-base" : "text-xl"
             }`}
           >
             Robotics and Drone Club
