@@ -22,7 +22,7 @@ export function AboutSection() {
               <p>
                 The <strong className="text-foreground">Robotics and Drone Club</strong>{" "}
                 is a student-led community building hands-on experience at the
-                intersection of hardware, AI, and autonomous systems.
+                intersection of hardware, AI and Mechanics
               </p>
               <p>
                 Apratim Adirtham is our flagship inter-college fest — a stage
