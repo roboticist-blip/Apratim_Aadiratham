@@ -31,38 +31,32 @@ export function Navbar() {
       }`}
     >
       <div
-        className={`relative mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
-          scrolled ? "h-14" : "h-20 sm:h-28"
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-300 ease-out sm:px-6 lg:px-8 ${
+          scrolled ? "h-16" : "h-20 sm:h-24"
         }`}
       >
-        <div className="flex items-center md:hidden">
-          <ThemeToggle />
-        </div>
-
+        {/* Left: Logo + wordmark */}
         <a
           href="#top"
-          className={`flex items-center gap-3 font-display font-bold transition-all duration-300 ${
-            scrolled
-              ? ""
-              : "absolute left-1/2 -translate-x-1/2 sm:static sm:left-auto sm:translate-x-0"
-          }`}
+          className="flex min-w-0 items-center gap-3 font-display font-bold"
         >
           <img
             src={logo}
             alt="Robotics and Drone Club logo"
-            className={`rounded-lg object-cover ring-1 ring-border transition-all duration-300 ease-out ${
-              scrolled ? "size-9" : "size-14 sm:size-20"
+            className={`shrink-0 rounded-lg object-cover ring-1 ring-border transition-all duration-300 ease-out ${
+              scrolled ? "size-10" : "size-14 sm:size-16"
             }`}
           />
           <span
-            className={`hidden tracking-tight transition-all duration-300 ease-out sm:inline ${
-              scrolled ? "text-base" : "text-2xl"
+            className={`hidden truncate tracking-tight transition-all duration-300 ease-out sm:inline ${
+              scrolled ? "text-base" : "text-xl"
             }`}
           >
             Robotics and Drone Club
           </span>
         </a>
 
+        {/* Center: Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a
@@ -75,10 +69,9 @@ export function Navbar() {
           ))}
         </nav>
 
+        {/* Right: Controls */}
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
           <Button
             asChild
             size="sm"
