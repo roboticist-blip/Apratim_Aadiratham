@@ -25,7 +25,7 @@ export function Hero() {
 
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
           A 2-day inter-college {EVENT.tagline.toLowerCase()} celebrating
-          autonomous systems, AI, and engineering innovation.
+          Robotics, AI, and engineering innovation.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
