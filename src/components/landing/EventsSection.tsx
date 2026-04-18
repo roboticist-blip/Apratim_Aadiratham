@@ -86,7 +86,7 @@ export function EventsSection() {
             Six events. Two days. One arena.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From autonomous drones to head-to-head bot wrestling — pick your
+            From drones to head-to-head bot wrestling — pick your
             challenge.
           </p>
         </div>
