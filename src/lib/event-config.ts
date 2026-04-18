@@ -6,7 +6,7 @@ export const EVENT = {
   tagline: "Robotics & Drone Fest",
   dates: "May 14 – 15, 2026",
   organiser: "Robotics and Drone Club",
-  mode: "Offline · Inter-college",
+  mode: "Offline · Indore Institute of Science and Technology",
   venue: "IIST, Indore",
 };
 
