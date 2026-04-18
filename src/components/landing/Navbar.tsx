@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { APPLY_URL } from "@/lib/event-config";
+import { APPLY_URL, EVENT } from "@/lib/event-config";
+import logo from "@/assets/logo.jpg";
 
 const links = [
   { href: "#events", label: "Events" },
@@ -14,14 +15,16 @@ export function Navbar() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-lg">
+    <header className="w-full border-b border-border/60 bg-background">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2 font-display font-bold">
-          <span className="grid size-9 place-items-center rounded-lg bg-primary text-primary-foreground shadow-glow">
-            <Cpu className="size-5" />
-          </span>
+          <img
+            src={logo}
+            alt={`${EVENT.organiser} logo`}
+            className="size-10 rounded-lg object-cover ring-1 ring-border"
+          />
           <span className="hidden text-lg tracking-tight sm:inline">
-            Apratim Adirtham
+            {EVENT.name}
           </span>
         </a>
 

@@ -1,6 +1,6 @@
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { APPLY_URL } from "@/lib/event-config";
+import { APPLY_URL, CONTACT } from "@/lib/event-config";
 
 const coordinators = [
   { name: "Harshvardhan Jaiswal", role: "Student Coordinator", phone: "9303538391" },
@@ -48,19 +48,22 @@ export function ContactSection() {
             </a>
           ))}
 
-          <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6">
-            <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary">
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-elegant"
+          >
+            <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
               <Mail className="size-5" />
             </span>
-            <div>
+            <div className="min-w-0">
               <div className="text-xs uppercase tracking-wider text-muted-foreground">
                 Email
               </div>
-              <div className="mt-1 text-sm text-foreground">
-                rndclub@college.edu
+              <div className="mt-1 break-all text-sm text-foreground">
+                {CONTACT.email}
               </div>
             </div>
-          </div>
+          </a>
 
           <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6">
             <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary">
@@ -71,10 +74,31 @@ export function ContactSection() {
                 Venue
               </div>
               <div className="mt-1 text-sm text-foreground">
-                On-campus · B/C-Block & Auditorium
+                IIST, Indore
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mx-auto mt-8 flex max-w-4xl items-center justify-center gap-3">
+          <a
+            href={CONTACT.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="grid size-11 place-items-center rounded-xl border border-border bg-card text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+          >
+            <Instagram className="size-5" />
+          </a>
+          <a
+            href={CONTACT.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="grid size-11 place-items-center rounded-xl border border-border bg-card text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+          >
+            <Linkedin className="size-5" />
+          </a>
         </div>
 
         <div className="mt-16 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary to-primary-glow p-10 text-center text-primary-foreground shadow-elegant sm:p-16">

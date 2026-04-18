@@ -7,4 +7,11 @@ export const EVENT = {
   dates: "May 14 – 15, 2026",
   organiser: "Robotics and Drone Club",
   mode: "Offline · Inter-college",
+  venue: "IIST, Indore",
+};
+
+export const CONTACT = {
+  email: "roboticdanddroneclub@gmail.com",
+  instagram: "https://www.instagram.com/robotics.drone_club/",
+  linkedin: "https://www.linkedin.com/company/robotics-drone-club-iist/",
 };
