@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 
 import appCss from "../styles.css?url";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { GradientMesh } from "@/components/GradientMesh";
 
 const themeInitScript = `(function(){try{var t=localStorage.getItem('apratim-theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d){document.documentElement.classList.add('dark');}}catch(e){}})();`;
 
@@ -73,7 +74,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <ThemeProvider>
-      <Outlet />
+      <GradientMesh />
+      <div className="relative z-10">
+        <Outlet />
+      </div>
     </ThemeProvider>
   );
 }
